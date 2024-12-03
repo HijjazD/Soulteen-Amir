@@ -2,24 +2,58 @@ body {
     padding: 0;
     margin: 0;
     background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.button-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 button {
-    border: 1;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    left: 50%;
+    border: none;
     padding: 20px 50px;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    color: white;
 }
 
-button:nth-of-type(1) {
+/* WhatsApp Button */
+.whatsapp-button {
     background-color: #18f98f;
-    top: 45%; /* Position the WhatsApp button */
 }
 
-button:nth-of-type(2) {
-    background-color: #18c4f9;
-    top: 75%; /* Position the Telegram button */
+.whatsapp-button:hover {
+    background-color: #16c772;
+}
+
+/* Telegram Button */
+.telegram-button {
+    background-color: #0088cc;
+}
+
+.telegram-button:hover {
+    background-color: #006ba1;
+}
+
+button[title]:hover::after {
+    content: attr(title);
+    display: block;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 14px;
+    padding: 5px;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    white-space: nowrap;
 }
